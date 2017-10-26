@@ -61,7 +61,7 @@ function colorGrid() {
 }
 
 formElmt.addEventListener("submit", makeGrid);
-pixelCanvas.addEventListener("click", colorGrid);
+pixelCanvas.addEventListener("mouseover", colorGrid);
 // formElmt.on("submit", makeGrid);
 
 // var tdElmt = document.querySelector("td");
