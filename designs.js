@@ -1,6 +1,3 @@
-// Select color input
-// Select size input
-
 // When size is submitted by the user, call makeGrid()
 
 // 1. Define your variables by selecting the DOM elements that
@@ -22,18 +19,6 @@
 
 let pixelCanvas = document.getElementById("pixel_canvas");
 let formElmt = document.getElementById("sizePicker");
-// let formElmt = $("#sizePicker");
-
-// function updateInput() {
-//  let inputHeight = document.getElementById("input_height").value;
-//  let inputWidth = document.getElementById("input_width").value;
-//  makeGrid(inputHeight, inputWidth);
-//  // return false;
-// }
-
-// function changeColor() {
-//  document.getElementsByTagName("td").style.background = "#aaa";
-// }
 
 function makeGrid() {
     event.preventDefault();
@@ -48,7 +33,6 @@ function makeGrid() {
         grid += "</tr>";
     }
     pixelCanvas.innerHTML = grid;
-    // return false;
 }
 
 function colorGrid() {
@@ -62,64 +46,3 @@ function colorGrid() {
 
 formElmt.addEventListener("submit", makeGrid);
 pixelCanvas.addEventListener("mouseover", colorGrid);
-// formElmt.on("submit", makeGrid);
-
-// var tdElmt = document.querySelector("td");
-
-
-
-// tdElmt.addEventListener("click", changeColor);
-
-// $( function() {
-//  $("td").click(function() {
-//      $(this).css("background", "#aaa");
-//  });
-// })
-
-// makeGrid(inputHeight, inputWidth);
-
-
-
-
-
-
-// jQuery
-
-// function makeGrid(inputHeight, inputWidth, submit, table) {
-//  const tr = "<tr></tr>";
-//  const td = "<td></td>";
-//  table.text(function mkgrid(height, width, submit, table) {
-//      for (const i = 0; i < inputHeight; i++) {
-//          table.html(tr);
-//      }
-//      for (const i = 0; i < inputWidth; i++) {
-//          tr.html(td);
-//      }
-//  })
-// }
-
-// const inputHeight = $("#input_height");
-// const inputWidth = $("#input_width");
-// const submit = $(":submit");
-// const table = $("#pixel_canvas");
-// const colorPicker = $("#colorPicker");
-
-// let row = "<tr></tr>";
-// let col = "<td></td>";
-// let rowcol = "<tr><td></td><td></td></tr>";
-
-// submit.click(function(event){
-//  // event.preventDefault();
-//  // table.html("<tr><td></td><td></td></tr>");
-//  // table.html(rowcol);
-//  table.html(row);
-//  $("tr").append(col);
-//  // makeGrid();
-//  return false;
-// })
-
-// $( function() {
-//  $("td").click(function() {
-//      $(this).css("background", "#aaa");
-//  });
-// })
