@@ -7,27 +7,22 @@ function makeGrid(event) {
     event.preventDefault();
     const height = document.getElementById('input_height').value;
     const width = document.getElementById('input_width').value;
-    let grid = '';
+    // Clears the previous table
+    pixelCanvas.innerHTML = '';
+    /** @description Makes grid  */
     for (let i = 0; i < height; i++) {
-        grid += '<tr>';
-        for (let s = 0; s < width; s++) {
-            grid += '<td></td>';
-        }
-        grid += '</tr>';
+    	// Inserts rows into the table
+    	const row = pixelCanvas.insertRow(i);
+    	for (let j = 0; j < width; j++) {
+    		// Inserts cells into each of the rows
+    		const cell = row.insertCell(j);
+    		/** @description Picks color  */
+    		cell.addEventListener('click', function() {
+    			this.style.backgroundColor = document.getElementById('colorPicker').value;
+    		})
+    	}
     }
-    pixelCanvas.innerHTML = grid;
-}
-
-/** @description Picks color  */
-function colorGrid(event) {
-    event.preventDefault();
-    $('td').click(function() {
-        const colorPicked = document.getElementById('colorPicker').value;
-        $(this).css('background', colorPicked);
-    });
 }
 
 // call the function 'makeGrid', if user clicks the submit button
 formElmt.addEventListener('submit', makeGrid);
-// Call the function 'colorGrid', if mouse pointer is on the canvas
-pixelCanvas.addEventListener('mouseover', colorGrid);
