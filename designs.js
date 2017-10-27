@@ -3,7 +3,7 @@ const pixelCanvas = document.getElementById('pixel_canvas');
 const formElmt = document.getElementById('sizePicker');
 
 /** @description Makes grid taking user's inputs as height and width */
-function makeGrid() {
+function makeGrid(event) {
     event.preventDefault();
     const height = document.getElementById('input_height').value;
     const width = document.getElementById('input_width').value;
@@ -19,7 +19,7 @@ function makeGrid() {
 }
 
 /** @description Picks color  */
-function colorGrid() {
+function colorGrid(event) {
     event.preventDefault();
     $('td').click(function() {
         const colorPicked = document.getElementById('colorPicker').value;
